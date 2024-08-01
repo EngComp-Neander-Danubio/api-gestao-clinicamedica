@@ -51,7 +51,7 @@ export class AppointmentController {
     const { id } = request.params;
     try {
       const showAppointments = new CreateAppointmentService();
-      const appointments = await showAppointments.execute({ clientId, date_appointment, doctorId, id });
+      const appointments = await showAppointments.execute({ clientId, date_appointment, doctorId });
       return response.status(200).json(appointments);
     }
     catch (err) {
