@@ -18,7 +18,7 @@ export class CreateAppointmentService {
     const appointmentsRepository = dataSource.getRepository(Appointment);
     const clientsRepository = dataSource.getRepository(Client);
     const doctorsRepository = dataSource.getRepository(Doctor);
-
+    
     /* const singleAppointment = await AppointmentRepository.findById(appointmentsRepository, id);
     if (singleAppointment) {
       throw new AppError("Appointment already exists");

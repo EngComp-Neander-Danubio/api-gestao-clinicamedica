@@ -10,6 +10,9 @@ class Appointment {
   @Column('timestamp')
   date_appointment: Date;
 
+  @Column('time')
+  hour_appointment: string;
+
   @CreateDateColumn()
   created_at: Date;
 

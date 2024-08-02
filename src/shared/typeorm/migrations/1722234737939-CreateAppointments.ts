@@ -20,6 +20,10 @@ export class CreateAppointments1722234737939 implements MigrationInterface {
             default: 'now()',
           },
           {
+            name: 'hour_appointment',
+            type: 'time',
+          },
+          {
             name: 'clientId',
             type: 'uuid',
           },

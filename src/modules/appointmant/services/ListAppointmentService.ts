@@ -8,6 +8,7 @@ export class ListAppointmentsService {
     const appointments = await appointmentsRepository.createQueryBuilder('appointment')
       .leftJoinAndSelect("appointment.appointmentClients", "client")
       .leftJoinAndSelect("appointment.appointmentDoctors", "doctor")
+      .leftJoinAndSelect("client.agreement", "agreement")
       .select([
         "appointment.id",
         "appointment.date_appointment",
@@ -15,12 +16,15 @@ export class ListAppointmentsService {
         "appointment.updated_at",
         "client.id",
         "client.name_client",
-        "client.created_at",
-        "client.updated_at",
+        "client.age",
+        "agreement.name_agreement",
+        "agreement.id",
+        // "client.created_at",
+        // "client.updated_at",
         "doctor.id",
         "doctor.name_doctor",
-        "doctor.created_at",
-        "doctor.updated_at",
+        // "doctor.created_at",
+        // "doctor.updated_at",
       ])
       .getMany();
 
