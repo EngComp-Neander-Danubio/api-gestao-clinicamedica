@@ -6,14 +6,17 @@ interface IRequest {
 }
 export class DeleteClientService {
 
-  public async execute({ id }: IRequest): Promise<void> {
+  public async execute({ id }: IRequest): Promise<Client | null> {
     const clientsRepository = dataSource.getRepository(Client);
-    const client = clientsRepository.findOne({
+    const client = await clientsRepository.findOne({
       where: { id }
     });
 
-    if(!client) {
-     throw new AppError('Client not found')
+    if (!client) {
+      throw new AppError('Client not found')
     }
+
+    await clientsRepository.remove(client);
+    return client;
   }
 }

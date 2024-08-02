@@ -1,5 +1,6 @@
 import appointmentsRoutes from "@modules/appointmant/routes/appointment.routes";
 import clientsRoutes from "@modules/client/routes/clients.routes";
+import clinicsRoutes from "@modules/clinica/routes/clinic.routes";
 import agreementRoutes from "@modules/convenio/routes/agreements.routes";
 import doctorsRoutes from "@modules/doctor/routes/doctor.routes";
 import specialtiesRoutes from "@modules/especiality/routes/specialty.routes";
@@ -20,6 +21,7 @@ routes.use('/clients', clientsRoutes);
 routes.use('/specialties', specialtiesRoutes);
 routes.use('/agreements', agreementRoutes);
 routes.use('/appointments', appointmentsRoutes);
+routes.use('/clinics', clinicsRoutes);
 
 
 export default routes;
